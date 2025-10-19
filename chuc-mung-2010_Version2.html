@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc Mừng 20/10</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .heart-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      background: #ff69b4;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 100px;
+      height: 90px;
+      background: #ff69b4;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    .heart-container:hover .heart {
+      transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+    }
+
+    .message-box {
+      position: absolute;
+      top: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      padding: 20px;
+      background-color: #ffe4ec;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: none;
+      text-align: center;
+      font-size: 18px;
+      color: #c71585;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart-container" onclick="showMessage()">
+    <div class="heart"></div>
+    <div class="message-box" id="messageBox">
+      💖 Chúc Các Bạn Nữ 12D02 20/10 Vui Vẻ 💖
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      var msgBox = document.getElementById("messageBox");
+      if (msgBox.style.display === "none" || msgBox.style.display === "") {
+        msgBox.style.display = "block";
+      } else {
+        msgBox.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
